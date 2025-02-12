@@ -2,100 +2,198 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="flex flex-col justify-center items-center mt-5 gap-5 m-5">
+      <div className="w-[50%] p-6 shadow-lg rounded-xl text-center bg-white">
+        <p className="text-lg">
+          ผมได้เริ่มจากการหาข้อมูลภายในเว็บไซต์ Kaggle แล้วได้ไปเจอข้อมูลของ{" "}
+          <b className="hover:underline text-blue-600">
+            <a
+              href="https://www.kaggle.com/datasets/nitingoyal8/flipkart-sales-data"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Flipkart Sales Data
+            </a>
+          </b>
+        </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <div className="mt-4 text-left">
+          <p className="font-bold text-xl">📊 เป็นเนื้อหาเกี่ยวกับ</p>
+          <p className="mt-2">
+            ธุรกรรมการขายของ Flipkart จำนวน 1,000 รายการที่สร้างขึ้นแบบสุ่ม
+            โดยมีรายละเอียดเกี่ยวกับสินค้า ราคา ปริมาณที่ขาย วันที่สั่งซื้อ
+            วิธีการชำระเงิน และคะแนนรีวิวจากลูกค้า
+          </p>
+          <p className="font-bold text-xl mt-4">📌 Features มีดังนี้</p>
+          <ul className="pl-6 pt-4 list-disc">
+            <li>
+              <b>Order ID</b> – Unique order identifier
+            </li>
+            <li>
+              <b>Product Name</b> – Name of the Flipkart product
+            </li>
+            <li>
+              <b>Category</b> – Product category (Electronics, Clothing, etc.)
+            </li>
+            <li>
+              <b>Price (INR)</b> – Product price (₹100 - ₹50,000)
+            </li>
+            <li>
+              <b>Quantity Sold</b> – Number of units sold (1-5)
+            </li>
+            <li>
+              <b>Total Sales (INR)</b> – Revenue from the sale (Price *
+              Quantity)
+            </li>
+            <li>
+              <b>Order Date</b> – Purchase date (last 1 year)
+            </li>
+            <li>
+              <b>Payment Method</b> – Mode of payment (UPI, COD, Card, etc.)
+            </li>
+            <li>
+              <b>Customer Rating</b> – Product rating (1.0 - 5.0)
+            </li>
+          </ul>
+          <div className="flex justify-center">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={
+                "https://www.channelengine.com/hubfs/Logos/Marketplaces/flipkart-marketplace-logo-600x600%20copy.jpg"
+              }
+              width={600}
+              height={600}
+              alt="Picture of the author"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </div>
+      <div className="w-[50%] p-6 shadow-lg rounded-xl text-center bg-white m-5">
+        <p className="text-lg mb-5">
+          ผมได้เตรียมข้อมูลโดยเริ่มจากการดู head 🧠
+        </p>
+        <div className="flex justify-center mb-5">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src={
+              "https://img5.pic.in.th/file/secure-sv1/Screenshot-2025-02-12-224728.png"
+            }
+            className="rounded-lg"
+            width={600}
+            height={400}
+            alt="find header"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        </div>
+        <p className="text-lg mb-5">ต่อมาผมเลยเริ่มดูข้อมูลจากส่วน tail 💪</p>
+        <div className="flex justify-center mb-5">
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+            src={
+              "https://img5.pic.in.th/file/secure-sv1/Screenshot-2025-02-12-230217.png"
+            }
+            className="rounded-lg"
+            width={600}
+            height={400}
+            alt="find tail"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        </div>
+
+        <p className="text-lg mb-5">
+          จากนั้นผมก็ดูในแต่ละ column ว่ามีค่าเป็น null ไหมถ้ามีให้ sum
+          ออกมาว่ามีกี่อัน 🤔
+        </p>
+        <div className="flex justify-center mb-5">
           <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+            src={"https://img2.pic.in.th/pic/Screenshot-2025-02-12-230549.png"}
+            className="rounded-lg"
+            width={600}
+            height={400}
+            alt="find null"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+
+        <p className="text-lg mb-5">
+          ผมเลยลองทำ boxplot ของค่า Total Sale ออกมาพบว่ามีค่า outlier 😱
+        </p>
+        <div className="flex justify-center mb-5">
+          <Image
+            src={
+              "https://img5.pic.in.th/file/secure-sv1/Screenshot-2025-02-12-231045.png"
+            }
+            className="rounded-lg"
+            width={600}
+            height={400}
+            alt="plot box-plot"
+          />
+        </div>
+
+        <p className="text-lg mb-5">
+          ผมเลยคำนวณหา ควอร์ไทล์ของ Q1 และ Q3 เพื่อนำมาคำนวณหา IQR จากนั้น
+          ผมก็หาค่าต่ำสุดที่เป็นไปได้ กับ ค่าสูงสุดที่เป็นไปได้
+          แล้วดูว่ามีค่าไหนเกินหรือต่ำกว่าค่าเป็นไปได้ที่คิดมาไหมถ้ามีให้ drop
+          row นั้นทิ้ง จากนั้นผมก็ดูจำนวน row ที่เหลือจาก 1000 ซึ่งเหลือ 984
+        </p>
+        <div className="flex justify-center mb-5">
+          <Image
+            src={"https://img2.pic.in.th/pic/Screenshot-2025-02-12-231337.png"}
+            className="rounded-lg"
+            width={600}
+            height={400}
+            alt="calculate"
+          />
+        </div>
+
+        <p className="text-lg mb-5">
+          ผมได้กำหนด Price , Quantity Sold , Customer Rating เป็น ฟีเจอร์
+          ใส่ลงใน x และผมได้กำหนด Total Sales เป็น label แทนลงใน y
+          หลังจากนั้นก็ทำการ split ข้อมูลแบ่งเป็น train 80% กับ test 20% โดยให้
+          random state = 42
+        </p>
+        <div className="flex justify-center mb-5">
+          <Image
+            src={"https://img2.pic.in.th/pic/Screenshot-2025-02-12-232341.png"}
+            className="rounded-lg"
+            width={600}
+            height={400}
+            alt="split"
+          />
+        </div>
+
+        <p className="text-lg mb-5">
+          หลังจากนั้นผมก็เรียกใช้ model Support Vector Regression
+          โดยเป็นการใช้แนวคิดของ Support Vector Machine กับ Regression
+          แทนที่จะใช้กับ Classification โดย ในการประมาณค่าของข้อมูล
+          จะให้ค่าคลาดเคลื่อนอยู่ในช่วงที่กำหนด โดยถ้า จุดข้อมูลที่อยู่ในระยะ ε
+          ถือว่าไม่มี error แต่ถ้า จุดที่อยู่ นอกช่วง ε จะถูก penalized ด้วย
+          loss function หลังจากนั้นผมก็ประเมิน model ด้วย ค่า mean absolute
+          error
+        </p>
+        <div className="flex justify-center mb-5">
+          <Image
+            src={"https://img2.pic.in.th/pic/Screenshot-2025-02-12-233612.png"}
+            className="rounded-lg"
+            width={600}
+            height={400}
+            alt="split"
+          />
+        </div>
+
+        <p className="text-lg mb-5">
+          หลังจากนั้นผมก็เรียกใช้ model RandomForest เป็นอัลกอริธึม Machine
+          Learning ที่ใช้ การรวมกันของหลายๆ Decision Trees โดย สร้างหลายๆ
+          Decision Trees แต่ละต้นไม้เรียนรู้ข้อมูลที่สุ่มมา
+          ทำให้มีความแตกต่างกัน จากนั้น แต่ละต้นไม้เลือกใช้ บางฟีเจอร์เท่านั้น
+          ทำให้ต้นไม้แต่ละต้นไม่เหมือนกัน สุดท้าย รวมผลลัพธ์ของทุกต้นไม้ โดยใช้
+          ใช้ค่าเฉลี่ยของทุกต้นไม้เป็นค่าทำนายสุดท้าย หลังจากนั้นผมก็ประเมิน
+          model ด้วย ค่า mean absolute error
+        </p>
+        <div className="flex justify-center mb-5">
+          <Image
+            src={"https://img2.pic.in.th/pic/Screenshot-2025-02-12-234203.png"}
+            className="rounded-lg"
+            width={600}
+            height={400}
+            alt="split"
+          />
+        </div>
+      </div>
     </div>
   );
 }
