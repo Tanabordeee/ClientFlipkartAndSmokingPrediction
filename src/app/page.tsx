@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center mt-5 gap-5 m-5">
-      <div className="w-[50%] p-6 shadow-lg rounded-xl text-center bg-white">
+      <div className="w-[50%] p-6 m-10 border shadow-lg rounded-xl text-center bg-white">
         <p className="text-lg">
           ผมได้เริ่มจากการหาข้อมูลภายในเว็บไซต์ Kaggle แล้วได้ไปเจอข้อมูลของ{" "}
           <b className="hover:underline text-blue-600">
@@ -67,8 +67,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-[50%] p-6 shadow-lg rounded-xl text-center bg-white m-5">
-        <p className="text-lg mb-5">
+      <div className="w-[50%] p-10 border shadow-lg rounded-xl text-center bg-white m-5">
+        <p className="text-lg m-10">
           ผมได้เตรียมข้อมูลโดยเริ่มจากการดู head 🧠
         </p>
         <div className="flex justify-center mb-5">
@@ -82,7 +82,7 @@ export default function Home() {
             alt="find header"
           />
         </div>
-        <p className="text-lg mb-5">ต่อมาผมเลยเริ่มดูข้อมูลจากส่วน tail 💪</p>
+        <p className="text-lg m-10">ต่อมาผมเลยเริ่มดูข้อมูลจากส่วน tail 💪</p>
         <div className="flex justify-center mb-5">
           <Image
             src={
@@ -95,7 +95,7 @@ export default function Home() {
           />
         </div>
 
-        <p className="text-lg mb-5">
+        <p className="text-lg m-10">
           จากนั้นผมก็ดูในแต่ละ column ว่ามีค่าเป็น null ไหมถ้ามีให้ sum
           ออกมาว่ามีกี่อัน 🤔
         </p>
@@ -109,7 +109,7 @@ export default function Home() {
           />
         </div>
 
-        <p className="text-lg mb-5">
+        <p className="text-lg m-10">
           ผมเลยลองทำ boxplot ของค่า Total Sale ออกมาพบว่ามีค่า outlier 😱
         </p>
         <div className="flex justify-center mb-5">
@@ -124,7 +124,7 @@ export default function Home() {
           />
         </div>
 
-        <p className="text-lg mb-5">
+        <p className="text-lg m-10">
           ผมเลยคำนวณหา ควอร์ไทล์ของ Q1 และ Q3 เพื่อนำมาคำนวณหา IQR จากนั้น
           ผมก็หาค่าต่ำสุดที่เป็นไปได้ กับ ค่าสูงสุดที่เป็นไปได้
           แล้วดูว่ามีค่าไหนเกินหรือต่ำกว่าค่าเป็นไปได้ที่คิดมาไหมถ้ามีให้ drop
@@ -140,7 +140,7 @@ export default function Home() {
           />
         </div>
 
-        <p className="text-lg mb-5">
+        <p className="text-lg m-10">
           ผมได้กำหนด Price , Quantity Sold , Customer Rating เป็น ฟีเจอร์
           ใส่ลงใน x และผมได้กำหนด Total Sales เป็น label แทนลงใน y
           หลังจากนั้นก็ทำการ split ข้อมูลแบ่งเป็น train 80% กับ test 20% โดยให้
@@ -156,7 +156,7 @@ export default function Home() {
           />
         </div>
 
-        <p className="text-lg mb-5">
+        <p className="text-lg m-10">
           หลังจากนั้นผมก็เรียกใช้ model Support Vector Regression
           โดยเป็นการใช้แนวคิดของ Support Vector Machine กับ Regression
           แทนที่จะใช้กับ Classification โดย ในการประมาณค่าของข้อมูล
@@ -165,7 +165,7 @@ export default function Home() {
           loss function หลังจากนั้นผมก็ประเมิน model ด้วย ค่า mean absolute
           error
         </p>
-        <div className="flex justify-center mb-5">
+        <div className="flex justify-center m-10">
           <Image
             src={"https://img2.pic.in.th/pic/Screenshot-2025-02-12-233612.png"}
             className="rounded-lg"
