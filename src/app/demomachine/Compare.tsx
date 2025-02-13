@@ -2,6 +2,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import Image from "next/image";
+import Swal from "sweetalert2"
 export default function CompareModel(){
     const [mae_svm , setmae_svm] = useState(0);
     const [mae_rf , setmae_rf] = useState(0);
@@ -22,8 +23,12 @@ export default function CompareModel(){
             setmae_svm(svm_model.mae);
             setPlotSvm(svm_model.photo);
             setPlotRf(rf_model.photo);
-        }catch(err){
-
+        }catch(error){
+            Swal.fire({
+                icon: "error",
+                title: "Can't Get Plot",
+            });
+            console.log(error);
         }
     }
     useEffect(()=>{
