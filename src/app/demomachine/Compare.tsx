@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Swal from "sweetalert2";
+import { Suspense } from "react";
 export default function CompareModel() {
   const [mae_svm, setmae_svm] = useState(0);
   const [mae_rf, setmae_rf] = useState(0);
@@ -42,6 +43,7 @@ export default function CompareModel() {
       <div className="flex justify-center items-center">
         <div className="text-center">
           <h1 className="text-xl ">Support Vector Regression</h1>
+          <Suspense fallback={<>Loading...</>}>
           {plot_svm && (
             <Image
               src={`data:image/png;base64,${plot_svm}`}
@@ -51,9 +53,11 @@ export default function CompareModel() {
             />
           )}
           <p className="mt-5">MAE: {mae_svm}</p>
+          </Suspense>
         </div>
         <div className="text-center">
           <h1 className="text-xl ">RandomForest Regressor</h1>
+          <Suspense fallback={<>Loading...</>}>
           {plot_rf && (
             <Image
               src={`data:image/png;base64,${plot_rf}`}
@@ -63,6 +67,7 @@ export default function CompareModel() {
             />
           )}
           <p className="mt-5">MAE: {mae_rf}</p>
+          </Suspense>
         </div>
       </div>
     </div>

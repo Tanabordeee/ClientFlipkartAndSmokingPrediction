@@ -4,6 +4,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { Line } from "react-chartjs-2";
+import { Suspense } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -154,8 +155,10 @@ export default function RfPredictionForm() {
           </button>
         </form>
         <div className="w-[50%] text-xl text-center m-5">
+          <Suspense fallback={<>Loading...</>}>
           <Line data={graphData} options={{ responsive: true }} />
           <h3 className="mt-5">Prediction Result: {result}</h3>
+          </Suspense>
         </div>
       </div>
     </div>
