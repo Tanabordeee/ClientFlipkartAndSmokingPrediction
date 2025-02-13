@@ -34,30 +34,31 @@ export default function SvmPredictForm(){
       });
     const SvmPredict = async (e:React.FormEvent)=>{
         e.preventDefault();
-        try{
-            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/predictsvm` , {
+        try {
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/predictsvm`, {
                 price,
                 quantity,
-                customer_rating ,
+                customer_rating,
             });
-            setresult(res.data.prediction)
+            const prediction = res.data.prediction; 
+    
+            setresult(prediction); 
             const updatedData = {
                 ...graphData,
                 datasets: [
-                  {
-                    ...graphData.datasets[0],
-                    data: [Number(price), Number(quantity), Number(customer_rating), Number(result)], 
-                  },
+                    {
+                        ...graphData.datasets[0],
+                        data: [Number(price), Number(quantity), Number(customer_rating), Number(prediction)], 
+                    },
                 ],
-              };
-              setGraphData(updatedData);
-        }
-        catch(error){
+            };
+            setGraphData(updatedData); 
+        } catch (error) {
             Swal.fire({
                 icon: "error",
                 title: "Send Error",
-            })
-            console.log("Error",error);
+            });
+            console.log("Error", error);
         }
     }
     const showAlert = (message: string) => {
@@ -122,11 +123,11 @@ export default function SvmPredictForm(){
             <button type="submit" className="p-3 bg-green-400 text-white text-xl rounded-lg hover:bg-red-400">Predict</button>
         </form>
         <div className="w-[50%] text-xl text-center m-5">
+        <h3 className="m-5">Prediction Result: {result}</h3>
         <Line 
         data={graphData} 
         options={{ responsive: true ,}}
         />
-        <h3 className="mt-5">Prediction Result: {result}</h3>
         </div>
         </>
     )
