@@ -4,7 +4,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { Line } from "react-chartjs-2";
-import { Suspense } from "react";
+import { HashLoader } from "react-spinners";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -32,6 +32,7 @@ export default function RfPredictionForm() {
   const [result, setresult] = useState<number | string>(
     "No SVM Prediction Result Now"
   );
+  const [loading, setLoading] = useState(false);
   const [graphData, setGraphData] = useState({
     labels: ["Price", "Quantity", "Customer Rating", "Total Price"],
     datasets: [
@@ -46,6 +47,7 @@ export default function RfPredictionForm() {
   });
   const RFPredict = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const res = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/predictRF`,
@@ -79,6 +81,9 @@ export default function RfPredictionForm() {
         title: "Send Error",
       });
       console.log("Error", error);
+      setLoading(false);
+    } finally {
+      setLoading(false);
     }
   };
   const showAlert = (message: string) => {
@@ -155,10 +160,16 @@ export default function RfPredictionForm() {
           </button>
         </form>
         <div className="w-[50%] text-xl text-center m-5">
-          <Suspense fallback={<>Loading...</>}>
-          <Line data={graphData} options={{ responsive: true }} />
-          <h3 className="mt-5">Prediction Result: {result}</h3>
-          </Suspense>
+          {loading ? (
+            <div className="flex justify-center items-center">
+              <HashLoader color="#252020" size={80} />
+            </div>
+          ) : (
+            <>
+              <Line data={graphData} options={{ responsive: true }} />
+              <h3 className="mt-5">Prediction Result: {result}</h3>
+            </>
+          )}
         </div>
       </div>
     </div>
