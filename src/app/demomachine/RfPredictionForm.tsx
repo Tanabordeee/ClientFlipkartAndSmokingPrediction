@@ -96,8 +96,9 @@ export default function RfPredictionForm(){
         }
     }
     return (
-        <>
+        <div className="m-10 border p-10 rounded-lg shadow-lg w-[80%] flex flex-col items-center">
         <h1 className="text-5xl m-5 font-bold">RandomForest Regressor</h1>
+        <div className="flex w-[100%] justify-center items-center">
         <form onSubmit={RFPredict} className="flex flex-col gap-5 border w-[50%] p-5 mt-5 rounded-lg">
             <label>PRICE</label>
             <input type="text" 
@@ -129,6 +130,7 @@ export default function RfPredictionForm(){
         />
         <h3 className="mt-5">Prediction Result: {result}</h3>
         </div>
-        </>
+        </div>
+        </div>
     )
 }
