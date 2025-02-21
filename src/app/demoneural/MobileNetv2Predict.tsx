@@ -11,12 +11,8 @@ export default function MobileNetV2() {
   const [loading, setLoading] = useState(false);
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      Swal.fire({
-        icon:"success",
-        title:"Image has pushed successfully",
-        text: "Clicked Submitted to Prediction"
-      })
       setFile(e.target.files[0]);
+      setUserImage(URL.createObjectURL(e.target.files[0]));
     }
   };
 
@@ -62,7 +58,7 @@ export default function MobileNetV2() {
         <img
           src={userImage}
           alt="Uploaded"
-          className="w-64 h-64 object-contain rounded-lg"
+          className="w-64 h-64 object-contain rounded-lg border w-full"
         />
       )}
       <label className="mt-5 text-xl font-semibold mb-5">{result}</label>
