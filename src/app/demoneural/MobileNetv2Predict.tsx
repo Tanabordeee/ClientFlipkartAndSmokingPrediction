@@ -57,10 +57,10 @@ export default function MobileNetV2() {
         <img
           src={userImage}
           alt="Uploaded"
-          className="w-64 h-64 object-contain"
+          className="w-64 h-64 object-contain rounded-lg"
         />
       )}
-      <label className="mt-5 text-xl font-semibold">{result}</label>
+      <label className="mt-5 text-xl font-semibold mb-5">{result}</label>
       {loading ? (
         <div className="flex justify-center items-center">
           <HashLoader color="#252020" size={80} />
@@ -93,7 +93,7 @@ export default function MobileNetV2() {
                   and drop
                 </p>
                 <p className="text-xs text-gray-500 dark:text-gray-400">
-                  PNG, JPG (BEST CHOICE. 32x32px)
+                  PNG, JPG (BEST CHOICE. 224x224px)
                 </p>
               </div>
               <input
