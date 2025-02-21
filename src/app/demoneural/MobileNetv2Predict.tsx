@@ -11,6 +11,11 @@ export default function MobileNetV2() {
   const [loading, setLoading] = useState(false);
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
+      Swal.fire({
+        icon:"success",
+        title:"Image has pushed successfully",
+        text: "Clicked Submitted to Prediction"
+      })
       setFile(e.target.files[0]);
     }
   };
