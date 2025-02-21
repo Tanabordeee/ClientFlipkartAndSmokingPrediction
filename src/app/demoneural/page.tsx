@@ -6,7 +6,7 @@ export default function demoneural() {
       <div className="m-10 border p-10 rounded-lg shadow-lg w-[50%] flex flex-col items-center">
         <h1 className="text-5xl m-5 font-bold">MobileNetV2</h1>
         <Image
-          src={"https://img2.pic.in.th/pic/accuracy_loss_plot-2.png"}
+          src={"https://img5.pic.in.th/file/secure-sv1/accuracy_loss_plot-4.png"}
           className="rounded-lg w-[100%] "
           width={1200}
           height={500}
