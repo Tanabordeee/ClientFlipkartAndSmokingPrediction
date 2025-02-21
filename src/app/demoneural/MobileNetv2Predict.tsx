@@ -3,7 +3,6 @@
 import axios from "axios";
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { Line } from "react-chartjs-2";
 import { HashLoader } from "react-spinners";
 export default function MobileNetV2() {
   const [userImage, setUserImage] = useState<string | null>(null);
@@ -97,7 +96,13 @@ export default function MobileNetV2() {
                   PNG, JPG (BEST CHOICE. 32x32px)
                 </p>
               </div>
-              <input id="dropzone-file" type="file" className="hidden" />
+              <input
+                id="dropzone-file"
+                accept="image/*"
+                onChange={handleFileChange}
+                type="file"
+                className="hidden"
+              />
             </label>
           </div>
 
