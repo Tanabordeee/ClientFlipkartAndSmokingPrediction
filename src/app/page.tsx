@@ -14,6 +14,15 @@ export default function Home() {
             >
               Flipkart Sales Data
             </a>
+          </b>{" "}
+          แต่ล่าสุดเหมือนว่าทางเจ้าของมีการลบออกจาก kaggle แต่ผมมีการ dump ไฟล์
+          csv ไว้ สามารถ เข้าถึงได้ผ่านลิ้งนะครับ {" "}
+          <b className="hover:underline text-red-600">
+            <a
+              href="https://drive.google.com/file/d/1vnD2zQKMKA1d4i27G_YNlP5haFptV_S-/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >CSV File Flipkart Sales Data</a>
           </b>
         </p>
 
